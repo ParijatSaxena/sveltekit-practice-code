@@ -30,7 +30,7 @@
   </div>
 {/await}
 
-<style scoped>
+<style>
   .child {
     height: 140px;
     width: 140px;
