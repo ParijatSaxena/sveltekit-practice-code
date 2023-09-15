@@ -21,17 +21,29 @@
 {#await getPost()}
   <p>Loading...</p>
 {:then data}
-  {#each data as { title, url }}
-    <div class="grid">
-      <img src={url} alt={title} />
-    </div>
-  {/each}
+  <div class="parent">
+    {#each data as { title, url }}
+      <div class="child">
+        <img src={url} alt={title} />
+      </div>
+    {/each}
+  </div>
 {/await}
 
 <style scoped>
-  .grid {
-    display: grid;
-    gap: 2em;
-    grid-template-columns: repeat(3, 1fr);
+  .child {
+    height: 140px;
+    width: 140px;
+    padding: 15px;
+  }
+  .child img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .parent {
+    display: flex;
+    height: 200px;
+    width: 500px;
   }
 </style>
